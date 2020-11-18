@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -26,8 +25,9 @@ class MapSampleState extends State<MapSample> {
 
   static final CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(10.92796133580664, -74.785749655962),
-    zoom: 14.4746,
+    zoom: 15.4746,
   );
+
 
 
   @override
@@ -41,58 +41,58 @@ class MapSampleState extends State<MapSample> {
         },
       ),
       appBar: AppBar(
-      title: Center(child: Text('Vamos!!!')),
-      backgroundColor: Colors.green,),
+        title: Center(child: Text('Vamos!!!')),
+        backgroundColor: Colors.green,),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-        //header
+            //header
 
-        UserAccountsDrawerHeader(
-        accountName: Text("Andrea"),
-        accountEmail: Text("andreina@gmail.com"),
-        currentAccountPicture: CircleAvatar(
-          backgroundColor: Colors.black,
-        ),
-        decoration: BoxDecoration(
-            color: Colors.green
-          ),
-        ),
+            UserAccountsDrawerHeader(
+              accountName: Text("Andrea"),
+              accountEmail: Text("andreina@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.black,
+              ),
+              decoration: BoxDecoration(
+                  color: Colors.green
+              ),
+            ),
 
-      InkWell(
-          onTap:(){},
-          child: ListTile(
-            title: Text('Mis datos'),
-            leading: Icon(Icons.account_box_outlined),
-          )
+            InkWell(
+                onTap:(){},
+                child: ListTile(
+                  title: Text('Mis datos'),
+                  leading: Icon(Icons.account_box_outlined),
+                )
+            ),
+            InkWell(
+                onTap:(){},
+                child: ListTile(
+                  title: Text('configuracion'),
+                  leading: Icon(Icons.settings),
+                )
+            ),
+          ],
+        ),
       ),
-      InkWell(
-          onTap:(){},
-          child: ListTile(
-            title: Text('configuracion'),
-            leading: Icon(Icons.settings),
-            )
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.green,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              title: Text('Explora', style: new TextStyle(color: Colors.black)),
+              icon: Icon(Icons.apps,color: Colors.black)
+          ),
+          BottomNavigationBarItem(
+              title: Text('Evento', style: new TextStyle(color: Colors.black)),
+              icon: Icon(Icons.add_circle ,color: Colors.black)
+          ),
+          BottomNavigationBarItem(
+              title: Text('Hoy', style: new TextStyle(color: Colors.black)),
+              icon: Icon(Icons.place, color: Colors.black)
           ),
         ],
       ),
-    ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.green,
-      items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-            title: Text('Explora', style: new TextStyle(color: Colors.black)),
-            icon: Icon(Icons.apps,color: Colors.black)
-        ),
-        BottomNavigationBarItem(
-            title: Text('Evento', style: new TextStyle(color: Colors.black)),
-            icon: Icon(Icons.add_circle ,color: Colors.black)
-        ),
-        BottomNavigationBarItem(
-            title: Text('Hoy', style: new TextStyle(color: Colors.black)),
-            icon: Icon(Icons.place, color: Colors.black)
-        ),
-      ],
-     ),
       bottomSheet: ,
     );
   }
